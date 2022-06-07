@@ -1,4 +1,4 @@
 <header>
   <h1><%= ["Blog", yield(:page_title).presence].compact.join(' - ') %></h1>
-  <nav><%= link_to 'Home', root_path %> / <%= link_to 'Posts', posts_path %> / <%= link_to 'Links', links_path %> / <%= link_to 'About', pages_about_path %></nav>
+  <nav><%= link_to_unless_current 'Home', root_path %> / <%= link_to_unless_current 'Posts', posts_path %> / <%= link_to_unless_current 'Links', links_path %> / <%= link_to_unless_current 'About', pages_about_path %></nav>
 </header>
