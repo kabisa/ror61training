@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
-  def home
-  end
+  layout 'home', only: [:home]
+  def home; end
 
-  def about
-  end
+  def about; end
 end
