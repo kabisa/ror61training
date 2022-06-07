@@ -7,10 +7,4 @@
     <%= form.submit %>
   </div>
 <% end %>
-<% if link.comments.any? %>
-  <ul>
-    <%= render link.comments %>
-  </ul>
-<% else %>
-  <p>There are no comments yet.</p>
-<% end %>
+<%= render(link.comments) || 'There are no comments yet.' %>
