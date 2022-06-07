@@ -1,6 +1,4 @@
-<h1>Editing Link</h1>
-
+<% content_for(:page_title) { "Editing #{@link.title}" } %>
 <%= render 'form', link: @link %>
-
 <%= link_to 'Show', @link %> |
 <%= link_to 'Back', links_path %>

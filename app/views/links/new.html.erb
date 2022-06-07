@@ -1,5 +1,3 @@
-<h1>New Link</h1>
-
+<% content_for(:page_title) { 'New Link' } %>
 <%= render 'form', link: @link %>
-
 <%= link_to 'Back', links_path %>
