@@ -1,5 +1,5 @@
 <h3>Create a comment</h3>
-<%= form_with(model: [link, new_comment]) do |form| %>
+<%= form_with(model: [commentable, new_comment]) do |form| %>
   <div class="field">
     <%= form.text_area :body, size: '100x6' %>
   </div>
@@ -7,4 +7,4 @@
     <%= form.submit %>
   </div>
 <% end %>
-<%= render(link.comments) || 'There are no comments yet.' %>
+<%= render(commentable.comments) || 'There are no comments yet.' %>

@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :link
+  belongs_to :commentable, polymorphic: true
 
   validates_presence_of :body
 end

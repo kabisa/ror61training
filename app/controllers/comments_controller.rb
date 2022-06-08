@@ -1,22 +1,18 @@
 class CommentsController < ApplicationController
-  before_action :set_link, only: [:create]
+  before_action :set_commentable, only: [:create]
 
   def create
-    comment = @link.comments.build(comment_params)
+    comment = @commentable.comments.build(comment_params)
 
     notice = if comment.save
                'Comment was successfully created.'
              else
                'Comment cannot be created.'
              end
-    redirect_to link_url(@link), notice: notice
+    redirect_back fallback_location: root_url, notice: notice
   end
 
   private
-
-  def set_link
-    @link = Link.find(params[:link_id])
-  end
 
   def comment_params
     params.require(:comment).permit(:body)

@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   get '/hello', to: redirect('/')
 
   resources :links do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create], module: :links
   end
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create], module: :posts
+  end
 
   root to: 'pages#home'
 end

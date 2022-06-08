@@ -11,4 +11,4 @@
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>
 <hr>
-<%= render partial: 'comments', locals: { link: @link, new_comment: @comment } %>
+<%= render partial: '/comments/comments', locals: { commentable: @link, new_comment: @comment } %>
