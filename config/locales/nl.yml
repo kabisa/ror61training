@@ -1,0 +1,20 @@
+nl:
+  pages:
+    home:
+      hello_html: "Hallo uit <i>Amsterdam</i>"
+      today_its: Het is vandaag %{date}.
+  activerecord:
+    models:
+      post:
+        one: Bericht
+        other: Berichten
+    attributes:
+      post:
+        title: "Titel"
+  helpers:
+    submit:
+      comment:
+        create: "Voeg commentaar toe aan dit bericht"
+  date:
+    formats:
+      with_day_of_week: "%A %e %B %Y"

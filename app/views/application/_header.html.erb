@@ -1,4 +1,5 @@
 <header>
   <h1><%= ["Blog", yield(:page_title).presence].compact.join(' - ') %></h1>
-  <nav><%= link_to_unless_current 'Home', root_path %> / <%= link_to_unless_current 'Posts', posts_path %> / <%= link_to_unless_current 'Links', links_path %> / <%= link_to_unless_current 'About', pages_about_path %></nav>
+  <nav><%= link_to_unless_current 'Home', root_path %> / <%= link_to_unless_current Post.model_name.human(count: 2), posts_path %> / <%= link_to_unless_current Link.model_name.human(count: 2), links_path %> / <%= link_to_unless_current 'About', pages_about_path %></nav>
+  <small><%= link_to_unless_current 'EN (US)', url_for(locale: 'en-US') %> / <%= link_to_unless_current 'EN (GB)', url_for(locale: 'en-GB') %> / <%= link_to_unless_current 'NL', url_for(locale: 'nl') %></small>
 </header>

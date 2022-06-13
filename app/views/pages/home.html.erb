@@ -1,2 +1,2 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2><%= t('.hello_html') %></h2>
+<p><%= t('.today_its', date: l(Date.current, format: :with_day_of_week)) %></p>
