@@ -2,5 +2,5 @@
   "Editing #{truncate(@post.title_was)}"
 end %>
 <%= render 'form', post: @post %>
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to t('helpers.show'), @post %> |
+<%= link_to t('helpers.back'), posts_path %>

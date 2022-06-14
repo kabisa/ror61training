@@ -1,19 +1,48 @@
 en:
+  application:
+    footer:
+      credits_html: >
+        I created this application during the Ruby on Rails training
+        at %{company_name} %{human_change_time} hosted by %{hosted_by}.
   pages:
     home:
       today_its: Today it's %{date}.
+      hello_html: "Hello from <i>Somewhere</i>"
   activerecord:
     models:
+      comment:
+        one: Comment
+        other: Comments
       post:
-        one: Message
-        other: Messages
+        one: Post
+        other: Posts
       link:
         one: Link
         other: Links
     attributes:
       post:
         title: "Title"
+      link:
+        title: "Title"
+        url: "Url"
+
+  date:
+    formats:
+      with_day_of_week: "%A, %B %e, %Y"
+
   helpers:
+    back: "Back"
+    edit: "Edit"
+    destroy: "Destroy"
+    new: "New %{model}"
+    show: "Show"
     submit:
       comment:
         create: "Comment on this message"
+
+  confirm: "Are you sure?"
+  ago: "%{from_time} ago"
+  created_ago: "Created %{ago}"
+  error_title:
+    one: "An error has been found when saving this %{model}:"
+    other: "%{count} errors have been found when saving this %{model}:"

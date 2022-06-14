@@ -1,10 +1,10 @@
-<% content_for(:page_title) { 'Links' } %>
+<% content_for(:page_title) { Link.model_name.human(count: 2) } %>
 <p id="notice"><%= notice %></p>
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Url</th>
+      <th><%= Link.human_attribute_name('title') %></th>
+      <th><%= Link.human_attribute_name('url') %></th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -13,11 +13,11 @@
       <tr>
         <td><%= truncated_link_to(link, :title) %></td>
         <td><%= link.url %></td>
-        <td><%= link_to 'Edit', edit_link_path(link) %></td>
-        <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('helpers.edit'), edit_link_path(link) %></td>
+        <td><%= link_to t('helpers.destroy'), link, method: :delete, data: { confirm: t('confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<%= link_to 'New Link', new_link_path %>
+<%= link_to t('helpers.new', model: Link.model_name.human), new_link_path %>

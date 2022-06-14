@@ -1,14 +1,14 @@
 <% content_for(:page_title) { truncate(@link.title) } %>
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Title:</strong>
+  <strong><%= Link.human_attribute_name(:title) %>:</strong>
   <%= @link.title %>
 </p>
 <p>
-  <strong>Url:</strong>
+  <strong><%= Link.human_attribute_name(:url) %>:</strong>
   <%= @link.url %>
 </p>
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+<%= link_to t('helpers.edit'), edit_link_path(@link) %> |
+<%= link_to t('helpers.back'), links_path %>
 <hr>
 <%= render partial: '/comments/comments', locals: { commentable: @link, new_comment: @comment } %>

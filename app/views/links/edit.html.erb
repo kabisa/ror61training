@@ -1,4 +1,4 @@
 <% content_for(:page_title) { "Editing #{truncate(@link.title_was)}" } %>
 <%= render 'form', link: @link %>
-<%= link_to 'Show', @link %> |
-<%= link_to 'Back', links_path %>
+<%= link_to t('helpers.show'), @link %> |
+<%= link_to t('helpers.back'), links_path %>

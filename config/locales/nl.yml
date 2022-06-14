@@ -1,20 +1,47 @@
 nl:
+  application:
+    footer:
+      credits_html: >
+        Ik heb deze applicatie %{human_change_time} gemaakt
+        tijdens de Ruby on Rails training bij %{company_name}
+        verzorgd door %{hosted_by}.
   pages:
     home:
-      hello_html: "Hallo uit <i>Amsterdam</i>"
+      hello_html: "Hallo vanuit <i>Amsterdam</i>"
       today_its: Het is vandaag %{date}.
   activerecord:
     models:
+      comment:
+        one: Commentaar
+        other: Commentaren
       post:
-        one: Bericht
-        other: Berichten
+        one: Artikel
+        other: Artikelen
+      link:
+        one: Koppeling
+        other: Koppelingen
     attributes:
       post:
         title: "Titel"
+      link:
+        title: "Titel"
+        url: "Webadres"
+
   helpers:
+    back: "Terug"
+    edit: "Bewerken"
+    destroy: "Verwijderen"
+    new: "%{model} toevoegen"
+    show: "Weergeven"
     submit:
       comment:
         create: "Voeg commentaar toe aan dit bericht"
   date:
     formats:
       with_day_of_week: "%A %e %B %Y"
+  confirm: "Weet je het zeker?"
+  ago: "%{from_time} geleden"
+  created_ago: "%{ago} toegevoegd"
+  error_title:
+    one: "%{model} kan niet worden opgeslagen vanwege de volgende fout:"
+    other: "%{model} kan niet worden opgeslagen vanwege de volgende %{count} fouten:"

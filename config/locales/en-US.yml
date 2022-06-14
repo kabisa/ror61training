@@ -2,6 +2,3 @@ en-US:
   pages:
     home:
       hello_html: "Hello from <i>Washington</i>"
-  date:
-    formats:
-      with_day_of_week: "%A, %B %e, %Y"

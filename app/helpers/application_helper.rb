@@ -5,7 +5,8 @@ module ApplicationHelper
 
   # human_change_time(__FILE__)
   def human_change_time(file)
-    "#{time_ago_in_words(File.ctime(file))} ago"
+    I18n.t('ago', from_time: time_ago_in_words(File.ctime(file)))
+    # "#{time_ago_in_words(File.ctime(file))} ago"
   end
 
   # truncated_link_to(post, :title)
