@@ -6,4 +6,8 @@ class Link < ApplicationRecord
             presence: true,
             uniqueness: true,
             format: { with: %r{https?://}i }
+
+  def inspect
+    "##{id}: #{title}, #{url}"
+  end
 end
