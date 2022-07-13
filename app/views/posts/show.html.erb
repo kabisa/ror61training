@@ -1,5 +1,4 @@
 <% content_for(:page_title) { truncate(@post.title) } %>
-<p id="notice"><%= notice %></p>
 <p>
   <strong><%= Post.human_attribute_name(:title) %>:</strong>
   <%= @post.title %>

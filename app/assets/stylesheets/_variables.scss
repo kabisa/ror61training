@@ -1,0 +1,22 @@
+$alert-padding: 1rem;
+$alert-margin-bottom: 1rem;
+$alert-border-radius: 0.375rem;
+
+$notice-color: #084298;
+// $notice-color: var(--nc-ac-1);
+$notice-bg: lighten($notice-color, 60%);
+$notice-border-color: lighten($notice-color, 50%);
+$notice-border: 1px solid $notice-border-color;
+$notice-padding: $alert-padding;
+$notice-margin-bottom: $alert-margin-bottom;
+$notice-border-radius: $alert-border-radius;
+
+$error-color: #842029;
+$error-bg: lighten($error-color, 60%);
+$error-border-color: lighten($error-color, 50%);
+$error-border: 1px solid $error-border-color;
+$error-padding: $alert-padding;
+$error-margin-bottom: $alert-margin-bottom;
+$error-border-radius: $alert-border-radius;
+
+$field-error-color: #dc3545;
