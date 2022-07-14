@@ -3,6 +3,25 @@
   color: $notice-color;
   background-color: $notice-bg;
   padding: $notice-padding;
+  padding-right: $notice-padding/2;
   border: $notice-border;
   border-radius: $notice-border-radius;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 400ms;
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  button.btn-close {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    padding: 0 $notice-padding/2;
+  }
 }
