@@ -8,5 +8,5 @@
   </div>
 <% end %>
 <% commentable.comments.each do |comment| %>
-   <%= react_component('Comment', text: "Jordy") %>
+   <%= react_component('Comment', text: comment.body, createdAgo: t('created_ago', ago: t('ago', from_time: time_ago_in_words(comment.created_at)))) %>
 <% end %>
