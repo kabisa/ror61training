@@ -12,6 +12,7 @@ const Comment = ({ text, createdAgo }) => {
 
 Comment.propTypes = {
   text: PropTypes.string.isRequired,
+  createdAgo: PropTypes.string
 };
 
 export default Comment;
