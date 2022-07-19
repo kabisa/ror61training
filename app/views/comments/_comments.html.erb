@@ -7,4 +7,6 @@
     <%= form.submit %>
   </div>
 <% end %>
-<%= render(commentable.comments) || 'There are no comments yet.' %>
+<% commentable.comments.each do |comment| %>
+   <%= react_component('Comment') %>
+<% end %>
