@@ -5,7 +5,7 @@ const Likes = () => {
   const [count, setCount] = useState(0);
 
   const onLike = () => {
-    console.log("Like!");
+    setCount(count + 1);
   };
 
   return (
