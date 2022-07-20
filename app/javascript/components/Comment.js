@@ -1,15 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Likes from "./Likes";
 
 const Comment = ({ text, createdAgo }) => {
   return (
     <blockquote>
       <p>{text}</p>
       <small>{createdAgo}</small>
-      <div className="likes">
-        <i className="fas fa-heart"></i>
-        <p>1</p>
-      </div>
+      <Likes />
     </blockquote>
   );
 };
