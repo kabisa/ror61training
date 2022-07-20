@@ -4,9 +4,13 @@ import PropTypes from "prop-types";
 const Likes = () => {
   const [count, setCount] = useState(0);
 
+  const onLike = () => {
+    console.log("Like!");
+  };
+
   return (
     <div className="likes">
-      <i className="far fa-heart"></i>
+      <i className="far fa-heart" onClick={onLike}></i>
       <p>{count}</p>
     </div>
   );
