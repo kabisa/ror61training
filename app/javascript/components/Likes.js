@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const Likes = () => {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="likes">
       <i className="far fa-heart"></i>
-      <p>1</p>
+      <p>{count}</p>
     </div>
   );
 };
