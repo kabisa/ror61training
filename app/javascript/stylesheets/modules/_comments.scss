@@ -1,0 +1,13 @@
+.likes {
+  float: right;
+  display: flex;
+  align-items: baseline;
+
+  .far {
+    cursor: pointer;
+  }
+
+  * {
+    margin-left: 5px;
+  }
+}
