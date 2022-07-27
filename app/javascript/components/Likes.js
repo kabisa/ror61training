@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const Likes = () => {
-  const [count, setCount] = useState(0);
+const Likes = ({ likes }) => {
+  const [count, setCount] = useState(likes);
 
   const onLike = () => {
     setCount(count + 1);
@@ -14,6 +14,10 @@ const Likes = () => {
       <p>{count}</p>
     </div>
   );
+};
+
+Likes.propTypes = {
+  likes: PropTypes.number.isRequired,
 };
 
 export default Likes;
