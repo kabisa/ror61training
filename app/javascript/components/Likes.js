@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const Likes = ({ likes, likePostUrl }) => {
+const Likes = ({ likes, likePostUrl, alreadyLiked }) => {
   const [count, setCount] = useState(likes);
 
   const onLike = async () => {
+    if (alreadyLiked) return;
+
     const options = {
       method: "POST",
       headers: {
@@ -23,7 +25,10 @@ const Likes = ({ likes, likePostUrl }) => {
 
   return (
     <div className="likes">
-      <i className="far fa-heart" onClick={onLike}></i>
+      <i
+        className={`fa${alreadyLiked ? "" : "r"} fa-heart`}
+        onClick={onLike}
+      ></i>
       <p>{count}</p>
     </div>
   );
@@ -32,6 +37,7 @@ const Likes = ({ likes, likePostUrl }) => {
 Likes.propTypes = {
   likes: PropTypes.number.isRequired,
   likePostUrl: PropTypes.string.isRequired,
+  alreadyLiked: PropTypes.bool,
 };
 
 export default Likes;
