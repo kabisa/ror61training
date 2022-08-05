@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const Likes = ({ likes }) => {
+const Likes = ({ likes, likePostUrl }) => {
   const [count, setCount] = useState(likes);
 
   const onLike = () => {
-    setCount(count + 1);
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ like: { uuid: "test" } }),
+    };
+
+    fetch(likePostUrl, options);
   };
 
   return (
@@ -18,6 +27,7 @@ const Likes = ({ likes }) => {
 
 Likes.propTypes = {
   likes: PropTypes.number.isRequired,
+  likePostUrl: PropTypes.string.isRequired,
 };
 
 export default Likes;
