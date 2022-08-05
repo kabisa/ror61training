@@ -1,5 +1,5 @@
 class Like < ApplicationRecord
   belongs_to :likeable, polymorphic: true
 
-  validates_presence_of :uuid
+  validates :uuid, presence: true, uniqueness: { scope: :likeable_id }
 end
