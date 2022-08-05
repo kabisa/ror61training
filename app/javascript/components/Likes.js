@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Likes = ({ likes, likePostUrl }) => {
   const [count, setCount] = useState(likes);
 
-  const onLike = () => {
+  const onLike = async () => {
     const options = {
       method: "POST",
       headers: {
@@ -14,7 +14,11 @@ const Likes = ({ likes, likePostUrl }) => {
       body: JSON.stringify({ like: { uuid: "test" } }),
     };
 
-    fetch(likePostUrl, options);
+    const response = await fetch(likePostUrl, options);
+
+    if (!response.ok) return;
+
+    setCount(count + 1);
   };
 
   return (
