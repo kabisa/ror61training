@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import alert from "sweetalert2";
+import cookies from "js-cookie";
 
 const Likes = ({ likes, likePostUrl, alreadyLiked }) => {
   const [count, setCount] = useState(likes);
@@ -13,14 +15,22 @@ const Likes = ({ likes, likePostUrl, alreadyLiked }) => {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ like: { uuid: "test" } }),
+      body: JSON.stringify({ like: { uuid: cookies.get("uuid") } }),
     };
 
     const response = await fetch(likePostUrl, options);
 
-    if (!response.ok) return;
+    if (!response.ok) return showError();
 
     setCount(count + 1);
+  };
+
+  const showError = () => {
+    alert.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong!",
+    });
   };
 
   return (
